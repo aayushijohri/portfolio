@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aayushi Johri — AI Engineer &amp; Full Stack Developer</title>
+  <meta name="description"
+    content="Portfolio of Aayushi Johri — AI Engineer, Full Stack Developer, 2× National Hackathon Winner. Building AI systems for cybersecurity, space tech, and startup intelligence.">
+  <meta name="author" content="Aayushi Johri">
+  <meta name="keywords"
+    content="Aayushi Johri, AI Engineer, Full Stack Developer, React, FastAPI, Python, Hackathon Winner, IGDTUW, portfolio">
+  <link rel="canonical" href="https://aayushijohri.me/">
+  <!-- OpenGraph -->
+  <meta property="og:title" content="Aayushi Johri — AI Engineer &amp; Full Stack Developer">
+  <meta property="og:description"
+    content="2× National Hackathon Winner building AI products in cybersecurity, startup intelligence, and space tech.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aayushijohri.me/">
+  <meta property="og:image" content="https://aayushijohri.me/og-image.png">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Aayushi Johri — AI Engineer &amp; Full Stack Developer">
+  <meta name="twitter:description" content="2× National Hackathon Winner building production AI systems.">
+  <meta name="twitter:image" content="https://aayushijohri.me/og-image.png">
+  <meta name="theme-color" content="#050816">
+  <link rel="icon" href="favicon.ico">
+  <link rel="manifest" href="manifest.json">
+  <!-- Schema.org Person -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Aayushi Johri",
+    "url": "https://aayushijohri.me",
+    "sameAs": [
+      "https://github.com/aayushijohri",
+      "https://linkedin.com/in/aayushijohri"
+    ],
+    "jobTitle": "AI Engineer & Full Stack Developer",
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "IGDTUW" },
+    "knowsAbout": ["Artificial Intelligence", "Full Stack Development", "Cybersecurity", "Space Technology"]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ─────────────────────── LOADER ─────────────────────── -->
+  <div id="loader" aria-hidden="true">
+    <div class="loader-ring"><span></span><span></span></div>
+    <p class="loader-label">AJ</p>
+  </div>
+
+  <!-- ─────────────────────── CANVAS PARTICLES ─────────────────────── -->
+  <canvas id="particles" aria-hidden="true"></canvas>
+
+  <!-- ─────────────────────── CURSOR GLOW ─────────────────────── -->
+  <div id="cursor-glow" aria-hidden="true"></div>
+
+  <!-- ─────────────────────── SCROLL PROGRESS ─────────────────────── -->
+  <div id="scroll-bar" aria-hidden="true"></div>
+
+  <!-- ─────────────────────── NAVBAR ─────────────────────── -->
+  <header id="site-header">
+    <nav class="nav-inner glass">
+      <a href="#hero" class="nav-brand">
+        <span class="nav-brand-box" aria-hidden="true"></span>
+        Aayushi
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#hackathons" class="nav-link">Hackathons</a></li>
+        <li><a href="#github" class="nav-link">GitHub</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button id="theme-btn" class="icon-btn" aria-label="Toggle theme">
+          <svg class="icon-sun" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+            <path
+              d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6m0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708" />
+          </svg>
+          <svg class="icon-moon" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+            <path
+              d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278" />
+          </svg>
+        </button>
+        <a href="#contact" class="btn-primary nav-cta">Let's Talk</a>
+        <button id="menu-btn" class="icon-btn hamburger" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile nav overlay -->
+  <div id="mobile-menu" aria-hidden="true">
+    <button id="menu-close" class="icon-btn" aria-label="Close menu">&times;</button>
+    <nav>
+      <a href="#about" class="mobile-link">About</a>
+      <a href="#skills" class="mobile-link">Skills</a>
+      <a href="#projects" class="mobile-link">Projects</a>
+      <a href="#experience" class="mobile-link">Experience</a>
+      <a href="#hackathons" class="mobile-link">Hackathons</a>
+      <a href="#github" class="mobile-link">GitHub</a>
+      <a href="#contact" class="mobile-link">Contact</a>
+      <a href="#contact" class="btn-primary">Let's Talk</a>
+    </nav>
+  </div>
+
+  <!-- ─────────────────────── HERO ─────────────────────── -->
+  <section id="hero">
+    <div class="container hero-layout">
+
+      <!-- Left column -->
+      <div class="hero-text reveal">
+        <div class="available-badge">
+          <span class="green-dot" aria-hidden="true"></span>
+          Open to internships &amp; hackathon collabs
+        </div>
+
+        <h1 class="hero-title"
+          style="font-size: clamp(2rem, 4.2vw, 3.8rem); line-height: 1.1; margin-bottom: 1.2rem; font-weight: 800;">Hi,
+          I'm <span class="grad-text">Aayushi Johri</span> — I build things with code and a lot of curiosity.</h1>
+
+        <p class="hero-role">
+          <span class="mono accent">&gt;</span>
+          <span id="typing-el" class="mono caret"></span>
+        </p>
+
+        <p class="hero-desc">
+          ECE-AI Student at IGDTUW · AI & Full Stack Developer · National Hackathon Winner
+          <br>I enjoy building AI-powered products that solve real-world problems and learning something new with every
+          project.
+        </p>
+
+        <div class="hero-btns">
+          <a href="#projects" class="btn-primary">View Projects →</a>
+          <a href="https://github.com/aayushijohri" target="_blank" rel="noopener" class="btn-ghost">GitHub</a>
+          <a href="https://linkedin.com/in/aayushijohri" target="_blank" rel="noopener" class="btn-ghost">LinkedIn</a>
+        </div>
+      </div>
+
+      <!-- Right column — Custom Mockup Showcase Window -->
+      <div class="hero-visual reveal">
+        <div class="showcase-window glass">
+          <!-- Window header status -->
+          <span class="aurora-bg" aria-hidden="true"></span>
+          <div class="window-header" aria-hidden="true">
+            <div class="window-dots">
+              <span class="dot-red"></span>
+              <span class="dot-yellow"></span>
+              <span class="dot-green"></span>
+            </div>
+            <div class="window-tabs" role="tablist">
+              <button class="window-tab active" role="tab" aria-selected="true" aria-controls="hero-panel-empowernet"
+                id="tab-empowernet">
+                🛡️ EmpowerNet AI
+              </button>
+              <button class="window-tab" role="tab" aria-selected="false" aria-controls="hero-panel-solarsentinel"
+                id="tab-solarsentinel">
+                🛰️ SolarSentinel
+              </button>
+              <button class="window-tab" role="tab" aria-selected="false" aria-controls="hero-panel-github"
+                id="tab-github">
+                🐙 GitHub Activity
+              </button>
+            </div>
+          </div>
+
+          <!-- Window body panels -->
+          <div class="window-body">
+            <!-- Panel 1: EmpowerNet -->
+            <div class="window-panel active" id="hero-panel-empowernet" role="tabpanel"
+              aria-labelledby="tab-empowernet">
+              <div class="panel-img-wrap">
+                <img src="assets/empowernet.png" alt="EmpowerNet AI Dashboard Preview" class="panel-img" loading="lazy" width="600" height="338">
+              </div>
+              <div class="panel-info">
+                <div class="panel-meta">National Winner · Cybersecurity</div>
+                <h4>EmpowerNet AI</h4>
+                <p>AI-powered cybersecurity platform for scam and deepfake detection built during a national hackathon.
+                </p>
+              </div>
+            </div>
+
+            <!-- Panel 2: SolarSentinel -->
+            <div class="window-panel" id="hero-panel-solarsentinel" role="tabpanel" aria-labelledby="tab-solarsentinel">
+              <div class="panel-img-wrap">
+                <img src="assets/solarsentinel.png" alt="SolarSentinel AI Dashboard Preview" class="panel-img" loading="lazy" width="600" height="338">
+              </div>
+              <div class="panel-info">
+                <div class="panel-meta">National Winner · Space Tech</div>
+                <h4>SolarSentinel AI</h4>
+                <p>Solar flare forecasting dashboard using data from ISRO's Aditya-L1 satellite. Built for the Bharatiya
+                  Antariksh Hackathon.</p>
+              </div>
+            </div>
+
+            <!-- Panel 3: GitHub Activity -->
+            <div class="window-panel" id="hero-panel-github" role="tabpanel" aria-labelledby="tab-github">
+              <div class="panel-github-mock">
+                <div class="github-profile-header">
+                  <div class="gh-avatar"
+                    style="width:2.2rem;height:2.2rem;border-radius:50%;background:var(--grad);display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:0.8rem;">
+                    AJ</div>
+                  <div>
+                    <span class="gh-user-name" style="font-size:0.9rem;font-weight:700;">aayushijohri</span>
+                    <span class="gh-user-title" style="font-size:0.7rem;color:var(--muted)">ECE-AI Student · Full Stack
+                      Developer</span>
+                  </div>
+                </div>
+                <div class="gh-custom-metrics">
+                  <div class="gh-cust-metric">
+                    <span class="num">16+</span>
+                    <span class="label">Merged PRs</span>
+                  </div>
+                  <div class="gh-cust-metric">
+                    <span class="num">GSSoC</span>
+                    <span class="label">2026 Contributor</span>
+                  </div>
+                  <div class="gh-cust-metric">
+                    <span class="num">3</span>
+                    <span class="label">Projects Built</span>
+                  </div>
+                </div>
+                <div class="gh-weekly-commits">
+                  <div class="commits-title">Recent contributions (GSSoC 2026)</div>
+                  <div class="mini-heatmap" id="hero-mini-heatmap"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Meteors -->
+    <div id="meteors" aria-hidden="true"></div>
+  </section>
+
+  <!-- ─────────────────────── ACHIEVEMENTS STRIP ─────────────────────── -->
+  <div class="achievements-strip reveal">
+    <div class="container achievements-inner">
+      <div class="achievement-item">
+        <span class="achievement-val">2×</span>
+        <span class="achievement-lbl">National Winner</span>
+      </div>
+      <div class="achievement-item">
+        <span class="achievement-val">25+</span>
+        <span class="achievement-lbl">Hackathon Finalist</span>
+      </div>
+      <div class="achievement-item">
+        <span class="achievement-val">3</span>
+        <span class="achievement-lbl">Flagship AI Projects</span>
+      </div>
+      <div class="achievement-item">
+        <span class="achievement-val">16+</span>
+        <span class="achievement-lbl">Merged PRs</span>
+      </div>
+      <div class="achievement-item">
+        <span class="achievement-val">9.36</span>
+        <span class="achievement-lbl">CGPA (IGDTUW)</span>
+      </div>
+    </div>
+  </div>
+  <section id="about">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">
+          <span class="badge-dot" aria-hidden="true"></span>About
+        </div>
+        <h2>Engineer. <span class="grad-text">Builder.</span> Problem Solver.</h2>
+      </div>
+      <div class="about-layout">
+        <div class="about-avatar-wrap reveal">
+          <div class="about-avatar glass neon-border">
+            <div class="aurora-bg" aria-hidden="true"></div>
+            <span class="avatar-initials grad-text" aria-hidden="true">AJ</span>
+            <div class="avatar-footer">
+              <strong>Aayushi Johri</strong>
+              <span>Delhi, India · IGDTUW</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-content reveal">
+          <p class="about-para">
+            I'm an ECE-AI student at IGDTUW passionate about building AI-powered software that solves practical
+            problems. Through national hackathons and personal projects, I've learned to rapidly prototype ideas,
+            collaborate with teams, and ship working products under tight deadlines. I'm currently focused on full-stack
+            development, artificial intelligence, cybersecurity, and space technology while continuously strengthening
+            my software engineering skills.
+          </p>
+          <div class="info-grid">
+            <div class="info-card glass">
+              <span class="info-label">Degree</span>
+              <span class="info-val">B.Tech ECE (AI)</span>
+            </div>
+            <div class="info-card glass">
+              <span class="info-label">University</span>
+              <span class="info-val">IGDTUW, Delhi</span>
+            </div>
+            <div class="info-card glass">
+              <span class="info-label">CGPA</span>
+              <span class="info-val">9.36 / 10</span>
+            </div>
+            <div class="info-card glass">
+              <span class="info-label">Location</span>
+              <span class="info-val">Delhi, India</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="skills">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">
+          <span class="badge-dot" aria-hidden="true"></span>Toolbelt
+        </div>
+        <h2><span class="grad-text">Skills &amp; Stack</span></h2>
+        <p class="section-sub">The tech I reach for when shipping.</p>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-card glass neon-border reveal">
+          <div class="skill-card-head">
+            <span class="skill-dot" style="background:#F59E0B;box-shadow:0 0 8px #F59E0B"></span>
+            <h3>Languages</h3>
+          </div>
+          <div class="chips">
+            <span class="chip">C++</span><span class="chip">Python</span><span class="chip">JavaScript</span><span
+              class="chip">HTML</span><span class="chip">CSS</span>
+          </div>
+        </div>
+        <div class="skill-card glass neon-border reveal">
+          <div class="skill-card-head">
+            <span class="skill-dot" style="background:#3B82F6;box-shadow:0 0 8px #3B82F6"></span>
+            <h3>Frontend</h3>
+          </div>
+          <div class="chips">
+            <span class="chip">React</span><span class="chip">Tailwind CSS</span><span class="chip">Vite</span>
+          </div>
+        </div>
+        <div class="skill-card glass neon-border reveal">
+          <div class="skill-card-head">
+            <span class="skill-dot" style="background:#8B5CF6;box-shadow:0 0 8px #8B5CF6"></span>
+            <h3>Backend</h3>
+          </div>
+          <div class="chips">
+            <span class="chip">Node.js</span><span class="chip">Express</span><span class="chip">FastAPI</span>
+          </div>
+        </div>
+        <div class="skill-card glass neon-border reveal">
+          <div class="skill-card-head">
+            <span class="skill-dot" style="background:#EC4899;box-shadow:0 0 8px #EC4899"></span>
+            <h3>AI / ML</h3>
+          </div>
+          <div class="chips">
+            <span class="chip">Scikit-Learn</span><span class="chip">PyTorch</span><span
+              class="chip">Transformers</span><span class="chip">OpenCV</span>
+          </div>
+        </div>
+        <div class="skill-card glass neon-border reveal">
+          <div class="skill-card-head">
+            <span class="skill-dot" style="background:#06B6D4;box-shadow:0 0 8px #06B6D4"></span>
+            <h3>Database</h3>
+          </div>
+          <div class="chips">
+            <span class="chip">MongoDB</span>
+          </div>
+        </div>
+        <div class="skill-card glass neon-border reveal">
+          <div class="skill-card-head">
+            <span class="skill-dot" style="background:#10B981;box-shadow:0 0 8px #10B981"></span>
+            <h3>Developer Tools</h3>
+          </div>
+          <div class="chips">
+            <span class="chip">Git</span><span class="chip">GitHub</span><span class="chip">VS Code</span><span
+              class="chip">Postman</span>
+          </div>
+        </div>
+        <div class="skill-card glass neon-border reveal">
+          <div class="skill-card-head">
+            <span class="skill-dot" style="background:#6366F1;box-shadow:0 0 8px #6366F1"></span>
+            <h3>Deployment</h3>
+          </div>
+          <div class="chips">
+            <span class="chip">Vercel</span><span class="chip">Railway</span><span class="chip">Render</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="projects">
+    <div class="container">
+      <div class="section-header" style="text-align: left; margin-bottom: 2.5rem;">
+        <div class="section-badge">
+          <span class="badge-dot" aria-hidden="true"></span>Projects
+        </div>
+        <h2>Things I've <span class="grad-text">Built</span></h2>
+        <p class="section-sub" style="margin-left: 0;">A mix of hackathon projects and personal builds — each one taught
+          me something new.</p>
+      </div>
+
+      <div class="projects-layout-custom">
+        <!-- 1. Flagship Project: EmpowerNet AI -->
+        <article class="project-flagship glass neon-border reveal">
+          <div class="pf-visual">
+            <div class="pf-img-wrap">
+              <img src="assets/empowernet.png" alt="EmpowerNet AI Platform Preview" class="pf-img" loading="lazy" width="800" height="450">
+            </div>
+          </div>
+          <div class="pf-details">
+            <div class="pf-badge-row">
+              <span class="flagship-label">🛡️ Flagship Project</span>
+              <span class="winner-badge-custom">🥇 National Winner (Synapse 2026)</span>
+            </div>
+            <h3>EmpowerNet AI</h3>
+            <p class="pf-tagline">AI-powered digital threat detection platform that analyzes suspicious text, images,
+              audio and video to identify phishing attempts, scams and manipulated media.</p>
+
+            <ul class="pf-features">
+              <li>Scam Detection</li>
+              <li>Deepfake Detection</li>
+              <li>Voice Analysis</li>
+              <li>Evidence Log</li>
+              <li>Threat Dashboard</li>
+              <li>Risk Reports</li>
+            </ul>
+
+            <div class="pf-tags">
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">FastAPI</span>
+              <span class="skill-tag">JavaScript</span>
+              <span class="skill-tag">HTML/CSS</span>
+              <span class="skill-tag">Blockchain</span>
+              <span class="skill-tag">Gemini API</span>
+            </div>
+
+            <div class="pf-actions">
+              <a href="https://drive.google.com/file/d/1N0-l76tcmqyVLoJneCnO7WZ6s42YjIZt/view" class="btn-primary">Watch
+                Demo ↗</a>
+              <a href="https://github.com/aayushijohri/Empowernet-AI" target="_blank" rel="noopener"
+                class="btn-ghost">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2. Featured Grid: SolarSentinel + AI Co-Founder -->
+        <div class="projects-featured-grid">
+          <!-- SolarSentinel AI -->
+          <article class="project-secondary glass reveal">
+            <div class="ps-visual">
+              <div class="ps-img-wrap">
+                <img src="assets/solarsentinel.png" alt="SolarSentinel AI Dashboard" class="ps-img" loading="lazy" width="600" height="338">
+              </div>
+            </div>
+            <div class="ps-details">
+              <div class="ps-meta">
+                <span class="winner-badge-custom flex-align">Bharatiya Antariksh Hackathon 2026</span>
+              </div>
+              <h3>SolarSentinel AI</h3>
+              <p class="ps-tagline">Space weather intelligence platform that predicts and visualizes solar flare
+                activity using telemetry from ISRO's Aditya-L1 mission.</p>
+
+              <ul class="ps-features">
+                <li>Solar flare prediction</li>
+                <li>Telemetry visualization</li>
+                <li>Historical event tracking</li>
+                <li>Interactive dashboards</li>
+                <li>Mission analytics</li>
+              </ul>
+
+              <div class="ps-tags">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">React</span>
+                <span class="skill-tag">FastAPI</span>
+                <span class="skill-tag">MongoDB</span>
+              </div>
+
+              <div class="ps-actions">
+                <a href="https://solar-sentinel-ai1.vercel.app" target="_blank" rel="noopener" class="btn-primary">Live
+                  Demo ↗</a>
+                <a href="https://github.com/aayushijohri/SolarSentinel-AI" target="_blank" rel="noopener"
+                  class="btn-ghost">GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- AI Co-Founder -->
+          <article class="project-secondary glass reveal">
+            <div class="ps-visual">
+              <div class="ps-img-wrap">
+                <img src="assets/aicofounder.png" alt="AI Co-Founder Interface" class="ps-img" loading="lazy" width="600" height="338">
+              </div>
+            </div>
+            <div class="ps-details">
+              <div class="ps-meta">
+                <span class="flagship-label"
+                  style="background: rgba(139,92,246,0.1); color: var(--secondary); border: 1px solid rgba(139,92,246,0.25);">🚀
+                  Startup Tool</span>
+              </div>
+              <h3>AI Co-Founder</h3>
+              <p class="ps-tagline">AI platform that transforms startup ideas into structured business plans with market
+                research, competitor analysis and go-to-market strategies.</p>
+
+              <ul class="ps-features">
+                <li>Business validation</li>
+                <li>Competitor analysis</li>
+                <li>Market research</li>
+                <li>Launch roadmap</li>
+                <li>Business plan generation</li>
+              </ul>
+
+              <div class="ps-tags">
+                <span class="skill-tag">React</span>
+                <span class="skill-tag">FastAPI</span>
+                <span class="skill-tag">Python</span>
+              </div>
+
+              <div class="ps-actions">
+                <a href="https://ai-co-founder-pp41.vercel.app/" target="_blank" rel="noopener" class="btn-primary">Live Demo ↗</a>
+                <a href="https://github.com/aayushijohri/AI-Co-Founder" target="_blank" rel="noopener"
+                  class="btn-ghost">GitHub</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────── EXPERIENCE ─────────────────────── -->
+  <section id="experience">
+    <div class="container">
+      <div class="section-header" style="text-align: left; margin-bottom: 2rem;">
+        <div class="section-badge">
+          <span class="badge-dot" aria-hidden="true"></span>Experience
+        </div>
+        <h2>Where I've Been <span class="grad-text">Building</span></h2>
+      </div>
+
+      <div class="experience-compact-layout">
+        <!-- 1. Intern -->
+        <div class="exp-item reveal">
+          <div class="exp-meta">
+            <span class="exp-date">June 2026 — Present</span>
+            <span class="exp-org">IGDTUW · AI/ML Dept</span>
+          </div>
+          <div class="exp-content">
+            <h4>Full Stack Web Development — Intern</h4>
+            <p>Developing full-stack web applications using React, Node.js, FastAPI and MongoDB while integrating
+              Generative AI capabilities into modern web workflows.</p>
+          </div>
+        </div>
+
+        <!-- 2. Protégé -->
+        <div class="exp-item reveal">
+          <div class="exp-meta">
+            <span class="exp-date">Dec 2025 — Present</span>
+            <span class="exp-org">Protégé IGDTUW</span>
+          </div>
+          <div class="exp-content">
+            <h4>Research Coordinator</h4>
+            <p>Co-authored 7 technical articles on AI and emerging technologies published on Medium with the Protégé
+              research team.</p>
+          </div>
+        </div>
+
+        <!-- 3. IEEE -->
+        <div class="exp-item reveal">
+          <div class="exp-meta">
+            <span class="exp-date">Dec 2025 — Present</span>
+            <span class="exp-org">IEEE IGDTUW</span>
+          </div>
+          <div class="exp-content">
+            <h4>Technical &amp; Content Coordinator</h4>
+            <p>Helping run hackathons and hands-on workshops, documenting technical project blueprints, and assisting
+              peers in understanding web programming fundamentals.</p>
+          </div>
+        </div>
+
+        <!-- 4. GirlScript -->
+        <div class="exp-item reveal">
+          <div class="exp-meta">
+            <span class="exp-date">2026</span>
+            <span class="exp-org">GSSoC 2026</span>
+          </div>
+          <div class="exp-content">
+            <h4>Open Source Contributor</h4>
+            <p>Contributed to open source systems by resolving front-end layout bugs, adding form checks, and utilizing
+              standard fork-pr Git workflows.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────── HACKATHONS ─────────────────────── -->
+  <section id="hackathons">
+    <div class="container">
+      <div class="section-header" style="text-align: left; margin-bottom: 2rem;">
+        <div class="section-badge">
+          <span class="badge-dot" aria-hidden="true"></span>Hackathon Trail
+        </div>
+        <h2>National Winner &amp; <span class="grad-text">Finalist Placements</span></h2>
+        <p class="section-sub" style="margin-left: 0;">Selected achievements across national hackathons.</p>
+      </div>
+
+      <div class="hackathon-timeline-custom">
+        <!-- Year 2026 Group -->
+        <div class="hack-year-group reveal">
+          <h3 class="hack-year-title">2026</h3>
+          <div class="hack-events-list">
+            <div class="hack-event-item glass">
+              <span class="hack-medal">🥇</span>
+              <div class="hack-event-info">
+                <h4>Synapse 2026</h4>
+                <span class="hack-place">Winner · 1st Place</span>
+              </div>
+            </div>
+            <div class="hack-event-item glass">
+              <span class="hack-medal">🥇</span>
+              <div class="hack-event-info">
+                <h4>Web of Innovation 2026</h4>
+                <span class="hack-place">Winner · 1st Place</span>
+              </div>
+            </div>
+            <div class="hack-event-item glass">
+              <span class="hack-medal">🏅</span>
+              <div class="hack-event-info">
+                <h4>National Online Hackathon</h4>
+                <span class="hack-place">4th Place</span>
+              </div>
+            </div>
+            <div class="hack-event-item glass">
+              <span class="hack-medal">🏅</span>
+              <div class="hack-event-info">
+                <h4>TechSprint GDG SRCASW</h4>
+                <span class="hack-place">4th Place</span>
+              </div>
+            </div>
+            <div class="hack-event-item glass">
+              <span class="hack-medal">🏅</span>
+              <div class="hack-event-info">
+                <h4>Hack The Matrix</h4>
+                <span class="hack-place">5th Place</span>
+              </div>
+            </div>
+            <div class="hack-event-item glass">
+              <span class="hack-medal">👩‍💻</span>
+              <div class="hack-event-info">
+                <h4>Hack The Matrix</h4>
+                <span class="hack-place">Best Girls Team</span>
+              </div>
+            </div>
+            <div class="hack-event-item glass hack-hidden-custom">
+              <span class="hack-medal">⭐</span>
+              <div class="hack-event-info">
+                <h4>TechSprint GDGoC VVIET</h4>
+                <span class="hack-place">Top 16</span>
+              </div>
+            </div>
+            <div class="hack-event-item glass hack-hidden-custom">
+              <span class="hack-medal">⭐</span>
+              <div class="hack-event-info">
+                <h4>Build-A-Thon</h4>
+                <span class="hack-place">Top 20</span>
+              </div>
+            </div>
+            <div class="hack-event-item glass hack-hidden-custom">
+              <span class="hack-medal">⭐</span>
+              <div class="hack-event-info">
+                <h4>Build with Gemini</h4>
+                <span class="hack-place">Top 50</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Year 2025 Group -->
+        <div class="hack-year-group reveal">
+          <h3 class="hack-year-title">2025</h3>
+          <div class="hack-events-list">
+            <div class="hack-event-item glass">
+              <span class="hack-medal">🥉</span>
+              <div class="hack-event-info">
+                <h4>HackVriksh 2025</h4>
+                <span class="hack-place">2nd Runner-Up</span>
+              </div>
+            </div>
+            <div class="hack-event-item glass">
+              <span class="hack-medal">🏅</span>
+              <div class="hack-event-info">
+                <h4>Hack With Ignite</h4>
+                <span class="hack-place">4th Place</span>
+              </div>
+            </div>
+            <div class="hack-event-item glass hack-hidden-custom">
+              <span class="hack-medal">⭐</span>
+              <div class="hack-event-info">
+                <h4>HackO'Clock</h4>
+                <span class="hack-place">Top 12</span>
+              </div>
+            </div>
+            <div class="hack-event-item glass hack-hidden-custom">
+              <span class="hack-medal">⭐</span>
+              <div class="hack-event-info">
+                <h4>Innovate X</h4>
+                <span class="hack-place">Top 14</span>
+              </div>
+            </div>
+            <div class="hack-event-item glass hack-hidden-custom">
+              <span class="hack-medal">⭐</span>
+              <div class="hack-event-info">
+                <h4>Build for Billions</h4>
+                <span class="hack-place">Top 20</span>
+              </div>
+            </div>
+            <div class="hack-event-item glass hack-hidden-custom">
+              <span class="hack-medal">⭐</span>
+              <div class="hack-event-info">
+                <h4>TCU Verse</h4>
+                <span class="hack-place">Top 20</span>
+              </div>
+            </div>
+            <div class="hack-event-item glass hack-hidden-custom">
+              <span class="hack-medal">⭐</span>
+              <div class="hack-event-info">
+                <h4>Snow Frost Hackathon</h4>
+                <span class="hack-place">Top 20</span>
+              </div>
+            </div>
+            <div class="hack-event-item glass hack-hidden-custom">
+              <span class="hack-medal">⭐</span>
+              <div class="hack-event-info">
+                <h4>AVISHKAAR Season 3</h4>
+                <span class="hack-place">Top 50</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hack-more-wrap">
+        <button id="hack-more-btn" class="btn-ghost">View Complete Timeline ↓</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────── GITHUB / OPEN SOURCE ─────────────────────── -->
+  <section id="github">
+    <div class="container">
+      <div class="section-header" style="text-align: left; margin-bottom: 2rem;">
+        <div class="section-badge">
+          <span class="badge-dot" aria-hidden="true"></span>Open Source
+        </div>
+        <h2>GSSoC '26 <span class="grad-text">Contributions</span></h2>
+        <p class="section-sub" style="margin-left: 0;">Meaningful contributions to production open-source projects.</p>
+      </div>
+
+      <div class="os-layout reveal">
+        <!-- Left Card: GSSoC 2026 Summary -->
+        <div class="os-focus-card glass neon-border"
+          style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+          <div>
+            <div class="os-header-row" style="margin-bottom: 1.25rem;">
+              <svg class="os-icon" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--accent)"
+                stroke-width="2" style="filter:drop-shadow(0 0 6px var(--accent));">
+                <path
+                  d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" />
+                <path
+                  d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" />
+              </svg>
+              <div class="os-header-text">
+                <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--text);">GirlScript Summer of Code 2026
+                </h3>
+                <span class="os-period" style="font-size: 0.8rem; color: var(--accent); font-weight: 600;">Open Source
+                  Contributor</span>
+              </div>
+            </div>
+            <p class="os-focus-desc"
+              style="font-size: 0.95rem; color: var(--muted); line-height: 1.6; margin-bottom: 1.5rem;">
+              Contributed to frontend development through feature implementation, UI redesigns, responsive layouts, bug
+              fixes and export enhancements across a production web application.
+            </p>
+          </div>
+
+          <div>
+            <div class="os-focus-stats"
+              style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8rem; border-top: 1px solid var(--border); padding-top: 1.2rem; margin-bottom: 1.5rem;">
+              <div class="os-stat">
+                <span class="val" style="font-size: 1.5rem; font-weight: 700; color: var(--text);">16</span>
+                <span class="lbl" style="font-size: 0.65rem; color: var(--muted); text-transform: uppercase;">Merged
+                  PRs</span>
+              </div>
+              <div class="os-stat">
+                <span class="val" style="font-size: 1.5rem; font-weight: 700; color: var(--text);">1</span>
+                <span class="lbl"
+                  style="font-size: 0.65rem; color: var(--muted); text-transform: uppercase;">Repository</span>
+              </div>
+              <div class="os-stat">
+                <span class="val"
+                  style="font-size: 1.2rem; font-weight: 700; color: var(--text); line-height: 1.95rem;">May-Jun</span>
+                <span class="lbl"
+                  style="font-size: 0.65rem; color: var(--muted); text-transform: uppercase;">2026</span>
+              </div>
+            </div>
+            <a href="https://github.com/aayushijohri" target="_blank" rel="noopener" class="btn-primary"
+              style="width: 100%; text-align: center; justify-content: center; display: inline-flex;">View GitHub
+              Profile ↗</a>
+          </div>
+        </div>
+
+        <!-- Right Card: Highlighted Contributions Checklist -->
+        <div class="os-focus-card glass neon-border"
+          style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+          <div>
+            <h3 style="font-size: 1.2rem; font-weight: 800; color: var(--text); margin-bottom: 1.25rem;">Highlighted
+              Contributions</h3>
+            <div class="highlight-checklist"
+              style="display: flex; flex-direction: column; gap: 0.72rem; max-height: 280px; overflow-y: auto; padding-right: 0.5rem;">
+              <div class="chk-item" style="display: flex; align-items: flex-start; gap: 0.6rem;">
+                <span class="chk-bullet"
+                  style="color: var(--accent); font-weight: bold; flex-shrink: 0; font-size: 0.9rem;">✓</span>
+                <span style="font-size: 0.88rem; color: var(--muted); line-height: 1.4;">Added DOCX, TXT &amp; EPUB
+                  export functionality</span>
+              </div>
+              <div class="chk-item" style="display: flex; align-items: flex-start; gap: 0.6rem;">
+                <span class="chk-bullet"
+                  style="color: var(--accent); font-weight: bold; flex-shrink: 0; font-size: 0.9rem;">✓</span>
+                <span style="font-size: 0.88rem; color: var(--muted); line-height: 1.4;">Enhanced generated PDF export
+                  design</span>
+              </div>
+              <div class="chk-item" style="display: flex; align-items: flex-start; gap: 0.6rem;">
+                <span class="chk-bullet"
+                  style="color: var(--accent); font-weight: bold; flex-shrink: 0; font-size: 0.9rem;">✓</span>
+                <span style="font-size: 0.88rem; color: var(--muted); line-height: 1.4;">Built Writing Templates
+                  feature</span>
+              </div>
+              <div class="chk-item" style="display: flex; align-items: flex-start; gap: 0.6rem;">
+                <span class="chk-bullet"
+                  style="color: var(--accent); font-weight: bold; flex-shrink: 0; font-size: 0.9rem;">✓</span>
+                <span style="font-size: 0.88rem; color: var(--muted); line-height: 1.4;">Implemented Writing Resource
+                  pages</span>
+              </div>
+              <div class="chk-item" style="display: flex; align-items: flex-start; gap: 0.6rem;">
+                <span class="chk-bullet"
+                  style="color: var(--accent); font-weight: bold; flex-shrink: 0; font-size: 0.9rem;">✓</span>
+                <span style="font-size: 0.88rem; color: var(--muted); line-height: 1.4;">Designed responsive Terms &amp;
+                  Conditions page</span>
+              </div>
+              <div class="chk-item" style="display: flex; align-items: flex-start; gap: 0.6rem;">
+                <span class="chk-bullet"
+                  style="color: var(--accent); font-weight: bold; flex-shrink: 0; font-size: 0.9rem;">✓</span>
+                <span style="font-size: 0.88rem; color: var(--muted); line-height: 1.4;">Improved Saved Stories
+                  UI/UX</span>
+              </div>
+              <div class="chk-item" style="display: flex; align-items: flex-start; gap: 0.6rem;">
+                <span class="chk-bullet"
+                  style="color: var(--accent); font-weight: bold; flex-shrink: 0; font-size: 0.9rem;">✓</span>
+                <span style="font-size: 0.88rem; color: var(--muted); line-height: 1.4;">Redesigned Footer &amp;
+                  Newsletter</span>
+              </div>
+              <div class="chk-item" style="display: flex; align-items: flex-start; gap: 0.6rem;">
+                <span class="chk-bullet"
+                  style="color: var(--accent); font-weight: bold; flex-shrink: 0; font-size: 0.9rem;">✓</span>
+                <span style="font-size: 0.88rem; color: var(--muted); line-height: 1.4;">Built Interactive Report Bug
+                  page</span>
+              </div>
+              <div class="chk-item" style="display: flex; align-items: flex-start; gap: 0.6rem;">
+                <span class="chk-bullet"
+                  style="color: var(--accent); font-weight: bold; flex-shrink: 0; font-size: 0.9rem;">✓</span>
+                <span style="font-size: 0.88rem; color: var(--muted); line-height: 1.4;">Fixed prompt dropdown
+                  overlap</span>
+              </div>
+              <div class="chk-item" style="display: flex; align-items: flex-start; gap: 0.6rem;">
+                <span class="chk-bullet"
+                  style="color: var(--accent); font-weight: bold; flex-shrink: 0; font-size: 0.9rem;">✓</span>
+                <span style="font-size: 0.88rem; color: var(--muted); line-height: 1.4;">Fixed guest story
+                  counter</span>
+              </div>
+              <div class="chk-item" style="display: flex; align-items: flex-start; gap: 0.6rem;">
+                <span class="chk-bullet"
+                  style="color: var(--accent); font-weight: bold; flex-shrink: 0; font-size: 0.9rem;">✓</span>
+                <span style="font-size: 0.88rem; color: var(--muted); line-height: 1.4;">Implemented login popup after
+                  guest limit</span>
+              </div>
+              <div class="chk-item" style="display: flex; align-items: flex-start; gap: 0.6rem;">
+                <span class="chk-bullet"
+                  style="color: var(--accent); font-weight: bold; flex-shrink: 0; font-size: 0.9rem;">✓</span>
+                <span style="font-size: 0.88rem; color: var(--muted); line-height: 1.4;">Fixed Community CTA
+                  redirect</span>
+              </div>
+              <div class="chk-item" style="display: flex; align-items: flex-start; gap: 0.6rem;">
+                <span class="chk-bullet"
+                  style="color: var(--accent); font-weight: bold; flex-shrink: 0; font-size: 0.9rem;">✓</span>
+                <span style="font-size: 0.88rem; color: var(--muted); line-height: 1.4;">Refactored bookmark layout and
+                  styling</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────── CONTACT ─────────────────────── -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">
+          <span class="badge-dot" aria-hidden="true"></span>Contact
+        </div>
+        <h2>Let's Build Something <span class="grad-text">Amazing</span></h2>
+        <p class="section-sub">Open to internships, SDE / AI Engineer roles, hackathon collaborations, and interesting
+          problems in AI, cybersecurity, or space tech.</p>
+      </div>
+
+      <div class="contact-layout">
+        <!-- Info -->
+        <div class="contact-invitation reveal glass neon-border">
+          <h3>Get in touch</h3>
+          <p class="invite-p">Whether it's a project idea, a hackathon invite, or just a question — feel free to drop
+            a message. I try to respond to everything.</p>
+          <div class="contact-channels">
+            <a href="mailto:aayushijohri2025@gmail.com" class="channel glass">
+              <span class="ch-icon">✉</span>
+              <div>
+                <span class="ch-label">Email</span>
+                <span class="ch-val">aayushijohri2025@gmail.com</span>
+              </div>
+            </a>
+            <a href="https://github.com/aayushijohri" target="_blank" rel="noopener" class="channel glass">
+              <span class="ch-icon">◯</span>
+              <div>
+                <span class="ch-label">GitHub</span>
+                <span class="ch-val">github.com/aayushijohri</span>
+              </div>
+            </a>
+            <a href="https://linkedin.com/in/aayushijohri" target="_blank" rel="noopener" class="channel glass">
+              <span class="ch-icon">in</span>
+              <div>
+                <span class="ch-label">LinkedIn</span>
+                <span class="ch-val">linkedin.com/in/aayushijohri</span>
+              </div>
+            </a>
+          </div>
+          <div class="contact-actions" style="margin-top: auto; padding-top: 1rem;">
+            <button id="copy-email-btn" class="btn-primary">Copy Email</button>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <form class="contact-form reveal glass neon-border" action="https://formspree.io/f/mqevokyv" method="POST"
+          style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+          <div class="form-row">
+            <div class="form-field">
+              <label for="f-name">Name</label>
+              <input id="f-name" name="name" type="text" placeholder="John Doe" required>
+            </div>
+            <div class="form-field">
+              <label for="f-email">Email</label>
+              <input id="f-email" name="email" type="email" placeholder="john@example.com" required>
+            </div>
+          </div>
+          <div class="form-field" style="flex-grow: 1; display: flex; flex-direction: column;">
+            <label for="f-msg">Message</label>
+            <textarea id="f-msg" name="message" rows="5" placeholder="Let's build…" required
+              style="flex-grow: 1; min-height: 160px;"></textarea>
+          </div>
+          <button type="submit" class="btn-primary"
+            style="margin-top: auto; width: 100%; text-align: center; justify-content: center;">Send Message →</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────── FOOTER ─────────────────────── -->
+  <footer id="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="nav-brand-box" aria-hidden="true"></span>
+        <span>Aayushi Johri</span>
+      </div>
+      <div class="footer-center">
+        <p class="footer-copy">&copy; 2026 · Designed &amp; Developed by Aayushi Johri</p>
+        <p class="footer-copy" style="font-size:0.72rem;opacity:0.6;">Built with HTML, CSS &amp; Vanilla JavaScript </p>
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/aayushijohri" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+        <a href="https://linkedin.com/in/aayushijohri" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ─────────────────────── BACK TO TOP ─────────────────────── -->
+  <button id="back-top" aria-label="Back to top">
+    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+      <path d="M12 19V5M5 12l7-7 7 7" />
+    </svg>
+  </button>
+
+  <!-- ─────────────────────── TOAST ─────────────────────── -->
+  <div id="toast" role="status" aria-live="polite">
+    <span>✓ Email copied!</span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
